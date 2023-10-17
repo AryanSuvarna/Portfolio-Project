@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import { useFormik } from "formik";
 import {
   Box,
@@ -19,7 +19,7 @@ import {useAlertContext} from "../context/alertContext";
 
 const LandingSection = () => {
   const {isLoading, response, submit} = useSubmit();
-  const { onOpen, onClose} = useAlertContext();
+  const { onOpen } = useAlertContext();
 
   const formik = useFormik({
     initialValues: {
@@ -45,13 +45,13 @@ const LandingSection = () => {
 
   useEffect(() => {
     console.log("This is response val", response)
-    if (initialRender.current != 0) {
+    if (initialRender.current !== 0) {
       // do this to ignore the inital render
       initialRender.current = initialRender.current - 1
     }
     else {
       onOpen(response.type, response.message)
-      if (response.type == 'success') {
+      if (response.type === 'success') {
         formik.resetForm()
       }
     }

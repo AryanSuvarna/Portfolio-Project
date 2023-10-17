@@ -1,6 +1,6 @@
-import { Heading, Image, Text, Card, CardBody, CardHeader, CardFooter, VStack} from "@chakra-ui/react";
+import { Heading, Image, Text, Card, CardBody, CardHeader, CardFooter} from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight , faAlignJustify} from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
 const Cards = ({ title, description, imageSrc }) => {
